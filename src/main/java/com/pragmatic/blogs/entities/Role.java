@@ -1,5 +1,6 @@
 package com.pragmatic.blogs.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -12,6 +13,6 @@ public class Role {
     private String name; // e.g., "ROLE_USER", "ROLE_ADMIN"
 
     @ManyToMany(mappedBy = "roles")
+    @JsonIgnore
     private List<User> users;
-
 }

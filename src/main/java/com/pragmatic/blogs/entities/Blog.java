@@ -14,7 +14,7 @@ public class Blog {
     private LocalDateTime createdAt;
 
     @ManyToOne
-    @JoinColumn(name = "author_id")
+    @JoinColumn(name = "author_id", referencedColumnName = "id")
     private User author;
 
     @OneToMany(mappedBy = "blog", cascade = CascadeType.ALL)
